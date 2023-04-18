@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="UTF-8" />
+    <title>最简单的 Element Plus 应用（脚本引入）</title>
+
+    <!-- 引入 Vue.js -->
+    <script src="./vue-global-3.2.36.js"></script>
+
+    <!-- 引入 Element Plus -->
+    <link rel="stylesheet" href="./element-plus-2.3.3.css" />
+    <script src="./element-plus-2.3.3.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <el-button>{{ message }}</el-button>
+    </div>
+
+    <script>
+      // 创建 Vue应用
+      const app = Vue.createApp({
+        data() {
+          return {
+            message: 'Hello Element Plus',
+          };
+        },
+      });
+
+      // 添加 ElementPlus 插件
+      app.use(ElementPlus);
+
+      // 挂载应用
+      app.mount('#app');
+    </script>
+  </body>
+</html>
